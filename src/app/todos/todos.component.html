@@ -1,0 +1,13 @@
+<h3>Add Todo</h3>
+<form (submit)="addTodo()">
+  <input class="form-control" placeholder="Create new todo here" type="text" [(ngModel)]="text" name="text" autofocus>
+</form>
+<button class="btn btn-menu" (click)="sortTodoByName()">Sort by name</button>
+
+<h3>Todo List</h3>
+<ul class="list-group">
+  <li *ngFor="let todo of todos; let i = index" class="list-group-item">
+    {{todo.text}} <button class="btn btn-primary btn-sm" (click)="deleteTodo(i)">x</button>
+  </li>
+</ul>
+
